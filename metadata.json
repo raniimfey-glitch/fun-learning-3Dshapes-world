@@ -1,0 +1,6 @@
+{
+  "name": "عالم المجسمات ثلاثية الأبعاد للأطفال",
+  "description": "تطبيق تفاعلي ثلاثي الأبعاد لتعليم المجسمات الهندسية للمرحلة الابتدائية بنطق عربي سليم وتمارين شيقة وجوائز ومتابعة تقدم.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

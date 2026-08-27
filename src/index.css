@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-size: 17px;
+    font-family: 'Tajawal', 'Readex Pro', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (min-width: 640px) {
+    html {
+      font-size: 18px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      font-size: 19px;
+    }
+  }
+
+  body {
+    line-height: 1.75;
+    letter-spacing: 0.01em;
+  }
+}
+
+/* Ensure Tashkeel / Diacritics have breathing space */
+.arabic-diacritics {
+  line-height: 1.8;
+  font-feature-settings: "cv01", "cv02", "cv03", "cv04";
+}

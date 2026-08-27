@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFBEB" />
+      <stop offset="50%" stop-color="#FEF3C7" />
+      <stop offset="100%" stop-color="#FDE68A" />
+    </linearGradient>
+
+    <!-- App Tile Gradient -->
+    <linearGradient id="tileGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+
+    <!-- Cube Top Gradient -->
+    <linearGradient id="cubeTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+
+    <!-- Cube Left Gradient -->
+    <linearGradient id="cubeLeft" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1" />
+      <stop offset="100%" stop-color="#4338CA" />
+    </linearGradient>
+
+    <!-- Cube Right Gradient -->
+    <linearGradient id="cubeRight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+
+    <!-- Sphere Gradient -->
+    <radialGradient id="sphereGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#F472B6" />
+      <stop offset="40%" stop-color="#EC4899" />
+      <stop offset="100%" stop-color="#9D174D" />
+    </radialGradient>
+
+    <!-- Cylinder Top Gradient -->
+    <linearGradient id="cylTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C084FC" />
+      <stop offset="100%" stop-color="#A855F7" />
+    </linearGradient>
+
+    <!-- Cylinder Body Gradient -->
+    <linearGradient id="cylBody" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9333EA" />
+      <stop offset="50%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#7E22CE" />
+    </linearGradient>
+
+    <!-- Soft Drop Shadows -->
+    <filter id="dropShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#78350F" flood-opacity="0.25" />
+    </filter>
+    
+    <filter id="shapeShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#1E1B4B" flood-opacity="0.3" />
+    </filter>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Base App Icon Rounded Squircle -->
+  <rect width="512" height="512" rx="112" fill="url(#tileGrad)" />
+  <rect x="12" y="12" width="488" height="488" rx="100" fill="none" stroke="#FDE68A" stroke-width="4" stroke-opacity="0.6" />
+  
+  <!-- Subtle Internal Glow Background -->
+  <rect x="24" y="24" width="464" height="464" rx="88" fill="url(#bgGrad)" filter="url(#dropShadow)" />
+
+  <!-- Background Decorative Circles & Grid Pattern -->
+  <g opacity="0.15">
+    <circle cx="256" cy="256" r="180" fill="none" stroke="#B45309" stroke-width="2" stroke-dasharray="8 8" />
+    <circle cx="256" cy="256" r="130" fill="none" stroke="#B45309" stroke-width="1.5" />
+    <line x1="256" y1="50" x2="256" y2="462" stroke="#B45309" stroke-width="1.5" stroke-dasharray="4 4" />
+    <line x1="50" y1="256" x2="462" y2="256" stroke="#B45309" stroke-width="1.5" stroke-dasharray="4 4" />
+  </g>
+
+  <!-- Shadow below primary shapes -->
+  <ellipse cx="256" cy="385" rx="150" ry="26" fill="#78350F" opacity="0.2" />
+
+  <!-- 3D Geometric Shape 1: Isometric Primary Cube in Center -->
+  <g filter="url(#shapeShadow)">
+    <!-- Left Face -->
+    <polygon points="256,240 145,180 145,310 256,370" fill="url(#cubeLeft)" />
+    <!-- Highlight on Left Face Edge -->
+    <line x1="145" y1="180" x2="256" y2="240" stroke="#818CF8" stroke-width="2" opacity="0.6" />
+
+    <!-- Right Face -->
+    <polygon points="256,240 367,180 367,310 256,370" fill="url(#cubeRight)" />
+    <!-- Highlight on Right Face Edge -->
+    <line x1="367" y1="180" x2="256" y2="240" stroke="#34D399" stroke-width="2" opacity="0.6" />
+
+    <!-- Top Face -->
+    <polygon points="256,120 367,180 256,240 145,180" fill="url(#cubeTop)" />
+    
+    <!-- Central Highlight Vertex Line -->
+    <line x1="256" y1="240" x2="256" y2="370" stroke="#FFFFFF" stroke-width="3" opacity="0.4" />
+  </g>
+
+  <!-- Vertices Dots on Cube (Illustrating geometry concepts: vertices and edges) -->
+  <g fill="#FFFFFF" filter="url(#glow)">
+    <circle cx="256" cy="120" r="7" />
+    <circle cx="367" cy="180" r="7" />
+    <circle cx="145" cy="180" r="7" />
+    <circle cx="256" cy="240" r="8" fill="#FDE047" stroke="#FFFFFF" stroke-width="2" />
+    <circle cx="145" cy="310" r="6" opacity="0.8" />
+    <circle cx="367" cy="310" r="6" opacity="0.8" />
+    <circle cx="256" cy="370" r="7" />
+  </g>
+
+  <!-- Floating Geometric Shape 2: Mini Sphere (Bottom Left) -->
+  <g filter="url(#shapeShadow)">
+    <circle cx="115" cy="345" r="42" fill="url(#sphereGrad)" />
+    <ellipse cx="102" cy="328" rx="14" ry="8" fill="#FFFFFF" opacity="0.6" transform="rotate(-30 102 328)" />
+  </g>
+
+  <!-- Floating Geometric Shape 3: Mini Cylinder (Top Right) -->
+  <g filter="url(#shapeShadow)">
+    <!-- Cylinder Body -->
+    <path d="M 370 120 L 415 120 L 415 170 C 415 180 370 180 370 170 Z" fill="url(#cylBody)" />
+    <!-- Cylinder Bottom Curve -->
+    <ellipse cx="392.5" cy="170" rx="22.5" ry="9" fill="#7E22CE" />
+    <!-- Cylinder Top Face -->
+    <ellipse cx="392.5" cy="120" rx="22.5" ry="9" fill="url(#cylTop)" stroke="#E9D5FF" stroke-width="1.5" />
+  </g>
+
+  <!-- Floating Sparkles & Math Stars -->
+  <!-- Top Star -->
+  <path d="M 256 50 Q 256 75 275 75 Q 256 75 256 100 Q 256 75 237 75 Q 256 75 256 50 Z" fill="#F59E0B" />
+  <circle cx="256" cy="75" r="3" fill="#FFFFFF" />
+
+  <!-- Right Sparkle -->
+  <path d="M 435 240 Q 435 255 450 255 Q 435 255 435 270 Q 435 255 420 255 Q 435 255 435 240 Z" fill="#FBBF24" />
+
+  <!-- Left Sparkle -->
+  <path d="M 80 200 Q 80 215 95 215 Q 80 215 80 230 Q 80 215 65 215 Q 80 215 80 200 Z" fill="#6366F1" />
+
+  <!-- 3D Badge Pill at the Bottom -->
+  <g filter="url(#dropShadow)">
+    <rect x="186" y="405" width="140" height="46" rx="23" fill="#1E1B4B" />
+    <rect x="188" y="407" width="136" height="42" rx="21" fill="none" stroke="#F59E0B" stroke-width="2" opacity="0.8" />
+    <text x="256" y="436" font-family="system-ui, -apple-system, 'Readex Pro', 'Tajawal', sans-serif" font-size="22" font-weight="900" fill="#FDE047" text-anchor="middle" letter-spacing="2">3D مُجَسَّمَات</text>
+  </g>
+</svg>
